@@ -1,34 +1,16 @@
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-  RouterProvider,
-} from "react-router-dom";
+import { Component, useState } from "react";
+import Pokemon from "./components/pokemon";
 import "./App.css";
-import Home from "./pages/Home";
-import { Routers } from "./routers";
-
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/" element={<Home />}>
-      {" "}
-      {Routers.map((e, i) => (
-        <Route
-          key={i}
-          path={e.path}
-          element={e.element}
-          loader={e.loader ?? null}
-        ></Route>
-      ))}
-    </Route>
-  )
-);
-
+import Header from "./components/header";
 function App() {
   return (
-    <>
-      <RouterProvider  router={router}></RouterProvider>
-    </>
+    <div className="App">
+      <header> POKEDEX</header>
+      <div>
+        <Header />
+        <Pokemon />
+      </div>
+    </div>
   );
 }
 
