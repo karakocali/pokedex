@@ -9,7 +9,6 @@ const Pokemon = () => {
 
   useEffect(() => {
     Axios.get("https://pokeapi.co/api/v2/pokemon?limit=151").then((res) => {
-      // get the first 20 pokemon
       setPokemon(res.data.results);
     });
   }, []);
